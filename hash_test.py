@@ -1,6 +1,8 @@
 import unittest
-from hash import Student
-from hash import Hash
+import hash
+#from hash import Student
+#from hash import Hash
+#from hash import isPrime
 
 
 class TestStudent(unittest.TestCase):
@@ -27,16 +29,17 @@ class TestStudent(unittest.TestCase):
         #How do I test these kinds of functions with overriding what == , >, <, and int?
     
     def test_isPrime_Prime(self): # not within a class...? 
-        self.assertTrue(self.isPrime(3),True) #Testing if 3 is prime? What do I do with self.something? Function not in a class. 
+        self.assertTrue(hash.isPrime(3),True) #Testing if 3 is prime? What do I do with self.something? Function not in a class. 
         #test if 1 and 2 and 5 and 7 and 9 is prime 
         #test high numbers if prime or not
         #test negative numbers
         
     def test_isPrime_notPrime(self):
-        self.assertFalse(self(4),False)
+        #self.assertFalse(self(4),False)
         #test if 4, 6, 8, 0? 
         #test high numbers
         #test negative numbers
+        pass
 
     def test_isPrime_notNone(self):
         pass

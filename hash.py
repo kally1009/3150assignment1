@@ -1,6 +1,7 @@
 import time
 import math
 
+#Bart's way -->line by line. 
 class Student:
     def __init__(self,firstName,lastName,SSN,email,age):
         self.mfirstName=firstName
