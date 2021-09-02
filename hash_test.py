@@ -6,9 +6,28 @@ from hash import Hash
 class TestStudent(unittest.TestCase):
     def setup(self):
         pass
+
+    def test_getSSN(self):
+        pass
+
+    def test_getFirstname(self):
+        pass
+
+    def test_getLastname(self):
+        pass
+
+    def test_getEmail(self):
+        pass
+
+    def test_getAge(self):
+        pass
+
+    def test_eq(self):
+        pass
+        #How do I test these kinds of functions with overriding what == , >, <, and int?
     
     def test_isPrime_Prime(self): # not within a class...? 
-        self.assertTrue(self(3),True) #Testing if 3 is prime
+        self.assertTrue(self.isPrime(3),True) #Testing if 3 is prime? What do I do with self.something? Function not in a class. 
         #test if 1 and 2 and 5 and 7 and 9 is prime 
         #test high numbers if prime or not
         #test negative numbers
@@ -46,4 +65,11 @@ class TestStudent(unittest.TestCase):
     def test_Exists(self):
         pass
         
+    def test_traverse(self):
+        pass
     
+    def test_delete(self):
+        pass
+
+if __name__ == '__main__':
+    unittest.main()
