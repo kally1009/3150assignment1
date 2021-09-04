@@ -10,7 +10,10 @@ class TestStudent(unittest.TestCase):
         pass
 
     def test_getSSN(self):
-        pass
+        newStudent = hash.Student("Jandir","Porta", "123456", "jandir_porta@hotmail.com", 34)
+        newStudentSSN = newStudent.getSSN()
+        expectedSSN = "123456"
+        self.assertEqual(newStudentSSN, expectedSSN)
 
     def test_getFirstname(self):
         pass
