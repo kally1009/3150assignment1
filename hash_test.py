@@ -83,7 +83,7 @@ class TestStudent(unittest.TestCase):
     def test_Retrieve_None(self):
         pass
         #does it return none when it doesn't exist?
-        #return value... Look up what 
+        #return value... Look up what (a count?) returns anything but none...
     def test_Retrieve_value(self):
         pass
 
