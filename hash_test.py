@@ -8,8 +8,10 @@ import hash
 class TestStudent(unittest.TestCase):
     # THIS RUNS EVERYTIME BEFORE ANY TEST.
     def setUp(self):
-        self.newStudent = hash.Student(
-            "Jandir", "Porta", "123456", "jandir_porta@hotmail.com", 34)
+        self.newStudent = hash.Student("Jandir", "Porta", "123456", "jandir_porta@hotmail.com", 34)
+
+        self.newHash = hash.Hash(10)
+
 
     def test_getSSN(self):
         testStudentSSN = self.newStudent.getSSN()
@@ -28,11 +30,10 @@ class TestStudent(unittest.TestCase):
         self.assertEqual(testStudentLastName, expectedLastName,
                          "The Last names dont match")
 
-    def test_getEmail(self):
-        testStudentEmail = self.newStudent.getEmail()
-        expectedEmail = "jandir_porta@hotmail.com"
-        self.assertIs(testStudentEmail, expectedEmail,
-                      "The email do not match")
+    # def test_getEmail(self):
+    #     testStudentEmail = self.newStudent.getEmail()
+    #     expectedEmail = "jandir_porta@hotmail.com"
+    #     self.assertIs(testStudentEmail, expectedEmail, "The email do not match")
 
     def test_getAge(self):
         testStudentAge = self.newStudent.getAge()
@@ -40,9 +41,8 @@ class TestStudent(unittest.TestCase):
         self.assertEqual(testStudentAge, expectedAge, "Both ages do not match")
 
     def test_eq(self):
+        #How do I test these kinds of functions with overriding what == , >, <, and int?
         pass
-        # How do I test these kinds of functions with overriding what == , >, <, and int?
-
     def test_isPrime_Prime(self):  # not within a class...?
         # Testing if 3 is prime? What do I do with self.something? Function not in a class.
         self.assertTrue(hash.isPrime(3), True)
@@ -82,12 +82,23 @@ class TestStudent(unittest.TestCase):
     def test_Retrieve_value(self):
         pass
 
-    def test_Exists(self):
+    # ---------------------------EXISTS----------------------------
+    # test with something that exists
+    def test_Exists_With_EXISTS(self):
+        self.newHash.Insert(self.newStudent)
+        self.assertTrue(self.newHash.Exists(self.newStudent))
+
+    # testing with something that doesnt exist
+    def test_Exists_With_N0_EXIST(self):
+        # existingStudent = hash.Student("FRANK","ELLIS","497-45-2922","ELLIS.FRANK@Dixie.edu", 47)
+        # self.assertTrue(hash.Hash.Exists(existingStudent))
         pass
 
+    # --------------TRAVERSE-------------------------
     def test_traverse(self):
         pass
-
+    
+    # -----------------DELETE------------------------------
     def test_delete(self):
         pass
 
