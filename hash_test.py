@@ -9,8 +9,8 @@ class TestStudent(unittest.TestCase):
     # THIS RUNS EVERYTIME BEFORE ANY TEST.
     def setUp(self):
         self.newStudent = hash.Student("Jandir", "Porta", "123456", "jandir_porta@hotmail.com", 34)
-
-        self.newHash = hash.Hash(10)
+        self.newHash = hash.Hash(30000)
+        self.test_Student = self.newHash.Insert(self.newStudent)
 
 
     def test_getSSN(self):
@@ -85,14 +85,13 @@ class TestStudent(unittest.TestCase):
     # ---------------------------EXISTS----------------------------
     # test with something that exists
     def test_Exists_With_EXISTS(self):
-        self.newHash.Insert(self.newStudent)
+        # self.newHash.Insert(self.newStudent)
         self.assertTrue(self.newHash.Exists(self.newStudent))
 
     # testing with something that doesnt exist
     def test_Exists_With_N0_EXIST(self):
-        # existingStudent = hash.Student("FRANK","ELLIS","497-45-2922","ELLIS.FRANK@Dixie.edu", 47)
-        # self.assertTrue(hash.Hash.Exists(existingStudent))
-        pass
+        existingStudent = hash.Student("FRANK","ELLIS","497-45-2922","ELLIS.FRANK@Dixie.edu", 47)
+        self.assertFalse(self.newHash.Exists(existingStudent))
 
     # --------------TRAVERSE-------------------------
     def test_traverse(self):
