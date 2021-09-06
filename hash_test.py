@@ -39,7 +39,7 @@ class TestStudent(unittest.TestCase):
     def test_getEmail(self):
         testStudentEmail = self.newStudent.getEmail()
         expectedEmail = "jandir_porta@hotmail.com"
-        self.assertIs(testStudentEmail, expectedEmail, "The emails dont match")
+        self.assertEqual(testStudentEmail, expectedEmail, "The emails dont match")
 
     def test_getAge(self):
         testStudentAge = self.newStudent.getAge()
@@ -108,6 +108,12 @@ class TestStudent(unittest.TestCase):
         pass
         # test if it is none
 
+    def test_Hash_Is_An_Instance_Of_Hash_With_Correct(self):
+        self.assertIsInstance(self.newHash, hash.Hash)
+
+    def test_Hash_Is_An_Instance_Of_Hash_With_Incorrect(self):
+        self.assertNotIsInstance(self.newStudent, hash.Hash)
+
     def test_hash_init(self):
         pass
         # test the __init__ (figure out what exactly it is doing) Look at Bart's instructions on assignment?
@@ -142,13 +148,19 @@ class TestStudent(unittest.TestCase):
 
     # -----------------DELETE------------------------------
     def test_delete_with_existing_item(self):
-        self.newHash.Insert(self.newStudent)
+        # self.newHash.Insert(self.newStudent)
         self.assertTrue(self.newHash.Delete(self.newStudent))
         # CHECKING IF IT ACTUALLY DELETED THE STUDENT
         self.assertFalse(self.newHash.Exists(self.newStudent))
 
     def test_Delete_With_Non_Existing_Item(self):
-        self.assertFalse(self.newHash.Delete(self.newStudent))
+        otherStudent = hash.Student(
+            "Anderson", "Porta", "654321", "anderson.com", 26)
+        self.assertFalse(self.newHash.Delete(otherStudent))
+
+    def test_Delete_With_Non_Student_Object(self):
+        badStudent = hash.Hash(200)
+        self.assertFalse(self.newHash.Delete(badStudent))
 
 
 if __name__ == '__main__':
