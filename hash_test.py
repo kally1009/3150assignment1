@@ -13,6 +13,13 @@ class TestStudent(unittest.TestCase):
 
         self.newHash = hash.Hash(10)
 
+    def test_newStudent_Initialization_with_good_student_object(self):
+        self.assertIsInstance(self.newStudent, hash.Student)
+
+    def test_newStudent_Initialization_with_bad_student_object(self):
+        testHash = hash.Hash(10)
+        self.assertNotIsInstance(testHash, hash.Student)
+
     def test_getSSN(self):
         testStudentSSN = self.newStudent.getSSN()
         expectedSSN = "123456"
@@ -50,7 +57,28 @@ class TestStudent(unittest.TestCase):
         sameStudent = self.newStudent
         self.assertTrue(self.newStudent.__eq__(sameStudent))
 
+    def test_gt_with_higherOther(self):
+        otherStudent = hash.Student(
+            "Anderson", "Porta", "654321", "anderson.com", 26)
+        self.assertFalse(self.newStudent.__gt__(otherStudent))
+
+    def test_gt_with_lowerOther(self):
+        otherStudent = hash.Student(
+            "Anderson", "Porta", "100321", "anderson.com", 26)
+        self.assertTrue(self.newStudent.__gt__(otherStudent))
+
+    def test_lt_withHigherOther(self):
+        otherStudent = hash.Student(
+            "Anderson", "Porta", "654321", "anderson.com", 26)
+        self.assertTrue(self.newStudent.__lt__(otherStudent))
+
+    def test_lt_withLowerOther(self):
+        otherStudent = hash.Student(
+            "Anderson", "Porta", "100321", "anderson.com", 26)
+        self.assertFalse(self.newStudent.__lt__(otherStudent))
+
     # TESTING INT METHOD WHERE ITS SUPPOSED TO CHANGE AN OBJECT TO AN INT BASED ON SSN
+
     def test_int_method(self):
         expectedSSN = 123456
         notExpectedSSN = 13456
