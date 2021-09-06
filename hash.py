@@ -41,6 +41,12 @@ class Student:
 
 
 def isPrime(x):
+    if x==None:
+        return None
+    elif type(x) == float:
+        return False
+    elif x <= 1:
+        return False
     s = int(math.sqrt(x))
     for i in range(2, s+1):
         if x % i == 0:
