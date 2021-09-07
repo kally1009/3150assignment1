@@ -45,6 +45,8 @@ def isPrime(x):
         return None
     elif type(x) == float:
         return False
+    elif type(x) == str:
+        return False
     elif x <= 1:
         return False
     s = int(math.sqrt(x))
