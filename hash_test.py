@@ -13,6 +13,16 @@ class TestStudent(unittest.TestCase):
         self.newHash = hash.Hash(30000)
         self.test_Student = self.newHash.Insert(self.newStudent)
 
+    def test_newStudent_Object(self):
+        newStudent1 = hash.Student("jfska","dkfas", "123789", "jan@gmail.com", 42)
+        newStudent2 = hash.Student("jfska","dkfas", "123729", "jan@gmail.com", 46)
+        newStudent3 = hash.Student("jfska","dkfas", "123789", "jan@gmail.com", 48)
+        newStudent4 = hash.Student("jfska","dkfas", "123989", "jan@gmail.com", 53)
+        self.assertTrue(newStudent1)
+        self.assertTrue(newStudent2)
+        self.assertTrue(newStudent3)
+        self.assertTrue(newStudent4)
+
     def test_newStudent_Initialization_with_good_student_object(self):
         self.assertIsInstance(self.newStudent, hash.Student)
 
@@ -157,6 +167,15 @@ class TestStudent(unittest.TestCase):
         self.assertFalse(hash.isPrime(0), False)
         self.assertFalse(hash.isPrime(1), False)
 
+    def test_Hash_Initialization(self):
+        testHash1 = hash.Hash(30)
+        testHash2= hash.Hash(60)
+        testHash3 = hash.Hash(50)
+        testHash4 = hash.Hash(30)
+        self.assertTrue(testHash1)
+        self.assertTrue(testHash2)
+        self.assertTrue(testHash3)
+        self.assertTrue(testHash4)
 
     def test_hash_init_msize(self):
         self.assertEqual(self.newHash.size(),1) #It's one because in the setUp we insert a student right away.
@@ -203,6 +222,7 @@ class TestStudent(unittest.TestCase):
 
     def test_Exists_With_None_Item(self):
         self.assertIsNone(self.newHash.Exists(None))
+
     # --------------TRAVERSE-------------------------
 
     def test_traverse(self):
