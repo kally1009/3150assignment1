@@ -167,6 +167,7 @@ class TestStudent(unittest.TestCase):
         self.assertFalse(hash.isPrime(0), False)
         self.assertFalse(hash.isPrime(1), False)
 
+<<<<<<< HEAD:hash_test.py
     def test_Hash_Initialization(self):
         testHash1 = hash.Hash(30)
         testHash2= hash.Hash(60)
@@ -176,6 +177,13 @@ class TestStudent(unittest.TestCase):
         self.assertTrue(testHash2)
         self.assertTrue(testHash3)
         self.assertTrue(testHash4)
+=======
+    def test_isPrime_notPrime_specialCase_String(self):
+        self.assertFalse(hash.isPrime('7'), False)
+        self.assertFalse(hash.isPrime('11'), False)
+
+    
+>>>>>>> 4bdae713deb03d3f0bf68f4383a93d303bbe1de8:test_hash.py
 
     def test_hash_init_msize(self):
         self.assertEqual(self.newHash.size(),1) #It's one because in the setUp we insert a student right away.
@@ -222,11 +230,14 @@ class TestStudent(unittest.TestCase):
 
     def test_Exists_With_None_Item(self):
         self.assertIsNone(self.newHash.Exists(None))
+<<<<<<< HEAD:hash_test.py
 
     # --------------TRAVERSE-------------------------
 
     def test_traverse(self):
         pass
+=======
+>>>>>>> 4bdae713deb03d3f0bf68f4383a93d303bbe1de8:test_hash.py
 
     # -----------------DELETE------------------------------
     def test_delete_with_existing_item(self):
@@ -256,9 +267,16 @@ class TestStudent(unittest.TestCase):
     def test_addAges_and_init_not_int(self):
         student3 = hash.Student('Kally', 'Adams', '198-76-5432', 'kallyadams@email.com', 22.5)
         self.assertEqual(hash.addAges(student3), 22)
+
+    def test_addAges_None_Item(self):
+        with self.assertRaises(Exception):
+            student0 = hash.Student(None,None,None,None)
+    def test_addAges_age_None(self):
+        with self.assertRaises(Exception):
+            student0 = hash.Student('Kal','Adam', '901-76-7890', 'kaladam@email.com', None)
     def test_Delete_With_None_Item(self):
         self.assertIsNone(self.newHash.Delete(None))
 
-
+    
 if __name__ == '__main__':
     unittest.main()
