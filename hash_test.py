@@ -209,6 +209,17 @@ class TestStudent(unittest.TestCase):
         badStudent = hash.Hash(200)
         self.assertFalse(self.newHash.Delete(badStudent))
 
+    def test_addAges_regular(self):
+        student1 = hash.Student('Kally', 'Adams', '098-76-5432', 'kallyadams@email.com', '22')
+        student2 = hash.Student('Rob', 'Albert', '123-45-6789', 'robalbert@dixie.edu', '49')
+        self.assertEqual(hash.addAges(student1), 44)
+        self.assertEqual(hash.addAges(student2), 93)
+        self.assertEqual(hash.addAges(self.newStudent), 127)
+
+    def test_addAges_and_init_not_int(self):
+        student3 = hash.Student('Kally', 'Adams', '198-76-5432', 'kallyadams@email.com', 22.5)
+        self.assertEqual(hash.addAges(student3), 22)
+
 
 if __name__ == '__main__':
     unittest.main()
