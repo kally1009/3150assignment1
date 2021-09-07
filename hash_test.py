@@ -188,6 +188,9 @@ class TestStudent(unittest.TestCase):
         newStudent = hash.Student(
             "Anderson", "Porta", "654321", "anderson.com", 26)
         self.assertFalse(self.newHash.Exists(newStudent))
+
+    def test_Exists_With_None_Item(self):
+        self.assertIsNone(self.newHash.Exists(None))
     # --------------TRAVERSE-------------------------
 
     def test_traverse(self):
@@ -204,6 +207,8 @@ class TestStudent(unittest.TestCase):
         otherStudent = hash.Student(
             "Anderson", "Porta", "654321", "anderson.com", 26)
         self.assertFalse(self.newHash.Delete(otherStudent))
+        self.assertFalse(self.newHash.Delete("otherStudent"))
+        self.assertFalse(self.newHash.Delete(1234))
 
     def test_Delete_With_Non_Student_Object(self):
         badStudent = hash.Hash(200)
@@ -219,6 +224,8 @@ class TestStudent(unittest.TestCase):
     def test_addAges_and_init_not_int(self):
         student3 = hash.Student('Kally', 'Adams', '198-76-5432', 'kallyadams@email.com', 22.5)
         self.assertEqual(hash.addAges(student3), 22)
+    def test_Delete_With_None_Item(self):
+        self.assertIsNone(self.newHash.Delete(None))
 
 
 if __name__ == '__main__':
