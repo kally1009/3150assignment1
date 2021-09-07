@@ -112,6 +112,10 @@ class TestStudent(unittest.TestCase):
         sameStudent = self.newStudent
         self.assertTrue(self.newStudent.__eq__(sameStudent))
 
+    def test_eq_with_non_student_object(self):
+        otherStudent = self.newHash
+        self.assertFalse(self.newStudent.__eq__(otherStudent))
+
     def test_gt_with_higherOther(self):
         otherStudent = hash.Student(
             "Anderson", "Porta", "654321", "anderson.com", 26)
@@ -122,6 +126,10 @@ class TestStudent(unittest.TestCase):
             "Anderson", "Porta", "100321", "anderson.com", 26)
         self.assertTrue(self.newStudent.__gt__(otherStudent))
 
+    def test_gt_with_non_student_object(self):
+        otherStudent = self.newHash
+        self.assertFalse(self.newStudent.__gt__(otherStudent))
+
     def test_lt_withHigherOther(self):
         otherStudent = hash.Student(
             "Anderson", "Porta", "654321", "anderson.com", 26)
@@ -130,6 +138,10 @@ class TestStudent(unittest.TestCase):
     def test_lt_withLowerOther(self):
         otherStudent = hash.Student(
             "Anderson", "Porta", "100321", "anderson.com", 26)
+        self.assertFalse(self.newStudent.__lt__(otherStudent))
+
+    def test_lt_with_non_student_object(self):
+        otherStudent = self.newHash
         self.assertFalse(self.newStudent.__lt__(otherStudent))
 
     # TESTING INT METHOD WHERE ITS SUPPOSED TO CHANGE AN OBJECT TO AN INT BASED ON SSN

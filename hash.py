@@ -28,12 +28,18 @@ class Student:
         return self.mage
 
     def __eq__(self, other):
+        if not isinstance(other, Student):
+            return False
         return self.mSSN == other.mSSN
 
     def __gt__(self, other):
+        if not isinstance(other, Student):
+            return False
         return self.mSSN > other.mSSN
 
     def __lt__(self, other):
+        if not isinstance(other, Student):
+            return False
         return self.mSSN < other.mSSN
 
     def __int__(self):
