@@ -90,6 +90,8 @@ class Hash:
                 index = 0
 
     def Exists(self, item):
+        if not item:
+            return None
         key = int(item)
         index = key % len(self.mTable)
         while True:
@@ -107,6 +109,8 @@ class Hash:
                 callbackFunction(i)
 
     def Delete(self, item):
+        if not item:
+            return None
         if not isinstance(item, Student):
             return False
         if not self.Exists(item):
