@@ -107,6 +107,8 @@ class Hash:
                 callbackFunction(i)
 
     def Delete(self, item):
+        if not isinstance(item, Student):
+            return False
         if not self.Exists(item):
             return False
         key = int(item)
