@@ -137,6 +137,10 @@ tcount = 0
 
 def addAges(s):
     global gTotalAge, tcount
+    if type(s) is None:
+        raise Exception("Can't be None")
+    elif s.getAge() == None:
+        raise Exception("Age can't be none")
     gTotalAge += (s.getAge())
     tcount += 1
     return gTotalAge

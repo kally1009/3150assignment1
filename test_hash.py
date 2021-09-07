@@ -225,7 +225,13 @@ class TestStudent(unittest.TestCase):
     def test_addAges_and_init_not_int(self):
         student3 = hash.Student('Kally', 'Adams', '198-76-5432', 'kallyadams@email.com', 22.5)
         self.assertEqual(hash.addAges(student3), 22)
-    
+
+    def test_addAges_None_Item(self):
+        with self.assertRaises(Exception):
+            student0 = hash.Student(None,None,None,None)
+    def test_addAges_age_None(self):
+        with self.assertRaises(Exception):
+            student0 = hash.Student('Kal','Adam', '901-76-7890', 'kaladam@email.com', None)
     def test_Delete_With_None_Item(self):
         self.assertIsNone(self.newHash.Delete(None))
 
