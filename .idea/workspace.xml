@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2b9ad98-3313-46cd-a90a-1eeec012a258" name="Default Changelist" comment="" />
+    <list default="true" id="a2b9ad98-3313-46cd-a90a-1eeec012a258" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/test_hash.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_hash.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +13,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1xgxnTrRuboWOrXFCR0rBFfsRHX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
