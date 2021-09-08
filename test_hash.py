@@ -228,7 +228,6 @@ class TestStudent(unittest.TestCase):
     def test_Exists_With_None_Item(self):
         self.assertIsNone(self.newHash.Exists(None))
 
-    # --------------TRAVERSE-------------------------
 
     # -----------------DELETE------------------------------
     def test_delete_with_existing_item(self):
@@ -265,6 +264,13 @@ class TestStudent(unittest.TestCase):
     def test_addAges_age_None(self):
         with self.assertRaises(Exception):
             student0 = hash.Student('Kal','Adam', '901-76-7890', 'kaladam@email.com', None)
+    
+    def test_addAges_notAnObject_but_int(self):
+        self.assertFalse(hash.addAges(0), False)
+
+    def test_addAges_notAnObject_but_string(self):
+        self.assertFalse(hash.addAges('hi'), False)
+
     def test_Delete_With_None_Item(self):
         self.assertIsNone(self.newHash.Delete(None))
 

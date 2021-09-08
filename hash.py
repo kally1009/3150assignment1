@@ -1,9 +1,6 @@
+#Code Originally written by Kalicia Adams. Some Modifications made by Kalicia Adams and Jandir Porta.
 import time
 import math
-
-# Bart's way -->line by line.
-
-
 class Student:
     def __init__(self, firstName, lastName, SSN, email, age):
         self.mfirstName = firstName
@@ -143,7 +140,11 @@ tcount = 0
 
 def addAges(s):
     global gTotalAge, tcount
-    if type(s) is None:
+    if type(s) is int:
+        return False
+    elif type(s) is str:
+        return False
+    elif type(s) is None:
         raise Exception("Can't be None")
     elif s.getAge() == None:
         raise Exception("Age can't be none")
